@@ -188,7 +188,7 @@ def action(request, response, logger)
 end
 
 def handle(request, response)
-  if request.headers['x-open-runtimes-health'] == '1'
+  if request.env['HTTP_X_OPEN_RUNTIMES_HEALTH'] === '1'
     response.status = 200
     response.headers['content-type'] = 'text/plain'
     response.body = 'OK'
