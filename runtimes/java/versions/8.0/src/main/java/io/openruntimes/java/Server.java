@@ -40,6 +40,11 @@ public class Server {
   }
 
   public static Context execute(Context ctx) {
+    if (ctx.header("x-open-runtimes-header") != null
+        && ctx.header("x-open-runtimes-header").equals("1")) {
+      return ctx.status(200).result("OK");
+    }
+
     RuntimeLogger logger = null;
 
     try {
