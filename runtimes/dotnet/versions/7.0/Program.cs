@@ -35,7 +35,8 @@ namespace DotNetRuntime
                 ? healthHeaderValue.ToString()
                 : string.Empty;
 
-            if (healthHeader == "1") {
+            if (healthHeader == "1")
+            {
                 return new CustomResponse(Encoding.UTF8.GetBytes("OK"), 200);
             }
             
