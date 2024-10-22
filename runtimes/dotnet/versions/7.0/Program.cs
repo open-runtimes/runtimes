@@ -39,7 +39,7 @@ namespace DotNetRuntime
             {
                 return new CustomResponse(Encoding.UTF8.GetBytes("OK"), 200);
             }
-            
+
             var loggingHeader = request.Headers.TryGetValue(
                 "x-open-runtimes-logging",
                 out var loggingHeaderValue
