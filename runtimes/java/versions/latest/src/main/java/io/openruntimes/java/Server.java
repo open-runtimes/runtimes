@@ -41,7 +41,7 @@ public class Server {
   }
 
   public static Context execute(Context ctx) {
-    if (ctx.header("x-open-runtimes-health") != "1") {
+    if (ctx.header("x-open-runtimes-health") == "1") {
       return ctx.status(200).result("OK");
     }
 
