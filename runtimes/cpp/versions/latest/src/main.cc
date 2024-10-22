@@ -33,7 +33,7 @@ int main()
             [](const drogon::HttpRequestPtr &req,
                std::function<void(const drogon::HttpResponsePtr &)> &&callback)
             {
-                if (req->headers().find("x-open-runtimes-health") != req->headers().end())
+                if (req->getHeader("x-open-runtimes-health") == "1")
                 {
                     const std::shared_ptr<drogon::HttpResponse> res = drogon::HttpResponse::newHttpResponse();
                     res->setStatusCode(drogon::HttpStatusCode::k200OK);
