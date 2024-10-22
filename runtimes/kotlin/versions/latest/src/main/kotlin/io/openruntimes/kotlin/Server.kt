@@ -34,7 +34,7 @@ suspend fun main() {
 }
 
 suspend fun execute(ctx: Context) {
-    if (ctx.header("x-open-runtimes-health") != null) {
+    if (ctx.header("x-open-runtimes-health") == "1") {
         ctx.status(200).result("OK")
         return
     }
