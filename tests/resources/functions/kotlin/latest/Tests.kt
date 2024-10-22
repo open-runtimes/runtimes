@@ -13,7 +13,7 @@ import java.security.NoSuchAlgorithmException
 public class Tests {
     @Throws(Exception::class)
     suspend fun main(context: RuntimeContext): RuntimeOutput {
-        when (context.req.headers["x-action"]) {
+        when (context.req.headers[""]) {
             "plaintextResponse" -> {
                 return context.res.text("Hello World 👋")
             }
