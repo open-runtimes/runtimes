@@ -4,6 +4,7 @@ import os
 import asyncio
 import base64
 import tensorflow as tf
+import time
 
 
 async def main(context):
@@ -139,6 +140,11 @@ When you can have two!
         context.log("Timeout start.")
         await asyncio.sleep(3)
         context.log("Timeout end.")
+        return context.res.text("Successful response.")
+    elif action == "timeoutBlocking":
+        start = time.time()
+        while time.time() < start + 3:
+            pass
         return context.res.text("Successful response.")
     elif action == "deprecatedMethods":
         return context.res.send(context.req.body_raw)
